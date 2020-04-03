@@ -48,13 +48,16 @@ class BaiduTongJi:
         趋势分析
         :return:
         """
+        col = kwargs['metrics'].split(',')
         response = self.send_request(kwargs)
         result = response['body']['data'][0]['result']['items']
 
-        ret_data = result[0]
-        ret_pv = result[1]
+        ret_date = np.array([i[0] for i in result[0]])
+        ret_pv = np.array(result[1])
+        df = pd.DataFrame(ret_pv, columns=col)
+        df['date'] = ret_date
 
-        return response
+        return df
 
     def all_source(self, **kwargs):
         """
@@ -97,6 +100,11 @@ class SurvivalAnalysis:
             method(*args)
 
     def all_source_plot(self, **kwargs):
+        """
+        KaplanMeier fit and plot, using baidutongji all_source dataframe as input
+        :param kwargs:
+        :return:
+        """
         all_source = self.data_frame
         title = kwargs['title']
         path = kwargs['path']
@@ -113,6 +121,11 @@ class SurvivalAnalysis:
         plt.savefig(path)
 
     def coxph(self, **kwargs):
+        """
+        CoxPH plot using baidutongji all_source dataframe as input.
+        :param kwargs:
+        :return:
+        """
         title = kwargs['title']
         path = kwargs['path']
         fit, ax = plt.subplots()
@@ -143,4 +156,4 @@ if __name__ == "__main__":
         gran='day',
         visitor='new',
     )
-    print(bdtj.matrix['trend'])
+    print(trend.head())
