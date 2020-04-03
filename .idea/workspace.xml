@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="8c99ba6a-f384-4a1c-8361-d87828187c5c" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectId" id="1ZtBzhEkYmkt9fUJDjl5gWO7BZI" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.Python" />
+  </component>
+  <component name="RunManager" selected="Python.bdtongji">
+    <configuration default="true" type="PythonConfigurationType" factoryName="Python">
+      <module name="bio" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="true" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="bdtongji" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="bio" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/bdtongji.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="true" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="first" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="bio" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/first.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.bdtongji" />
+        <item itemvalue="Python.first" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="8c99ba6a-f384-4a1c-8361-d87828187c5c" name="Default Changelist" comment="" />
+      <created>1585648773883</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1585648773883</updated>
+      <workItem from="1585648776619" duration="1036000" />
+      <workItem from="1585811237264" duration="123000" />
+      <workItem from="1585811462543" duration="18824000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state width="934" height="438" key="DebuggerActiveHint" timestamp="1585812681569">
+      <screen x="0" y="23" width="1280" height="709" />
+    </state>
+    <state width="934" height="438" key="DebuggerActiveHint/0.23.1280.709@0.23.1280.709" timestamp="1585812681569" />
+    <state width="1171" height="218" key="GridCell.Tab.0.bottom" timestamp="1585838529040">
+      <screen x="0" y="23" width="1280" height="709" />
+    </state>
+    <state width="1171" height="218" key="GridCell.Tab.0.bottom/0.23.1280.709@0.23.1280.709" timestamp="1585838529040" />
+    <state width="1171" height="218" key="GridCell.Tab.0.center" timestamp="1585838529039">
+      <screen x="0" y="23" width="1280" height="709" />
+    </state>
+    <state width="1171" height="218" key="GridCell.Tab.0.center/0.23.1280.709@0.23.1280.709" timestamp="1585838529039" />
+    <state width="1171" height="218" key="GridCell.Tab.0.left" timestamp="1585838529039">
+      <screen x="0" y="23" width="1280" height="709" />
+    </state>
+    <state width="1171" height="218" key="GridCell.Tab.0.left/0.23.1280.709@0.23.1280.709" timestamp="1585838529039" />
+    <state width="1171" height="218" key="GridCell.Tab.0.right" timestamp="1585838529040">
+      <screen x="0" y="23" width="1280" height="709" />
+    </state>
+    <state width="1171" height="218" key="GridCell.Tab.0.right/0.23.1280.709@0.23.1280.709" timestamp="1585838529040" />
+    <state width="1171" height="218" key="GridCell.Tab.1.bottom" timestamp="1585838529041">
+      <screen x="0" y="23" width="1280" height="709" />
+    </state>
+    <state width="1171" height="218" key="GridCell.Tab.1.bottom/0.23.1280.709@0.23.1280.709" timestamp="1585838529041" />
+    <state width="1171" height="218" key="GridCell.Tab.1.center" timestamp="1585838529040">
+      <screen x="0" y="23" width="1280" height="709" />
+    </state>
+    <state width="1171" height="218" key="GridCell.Tab.1.center/0.23.1280.709@0.23.1280.709" timestamp="1585838529040" />
+    <state width="1171" height="218" key="GridCell.Tab.1.left" timestamp="1585838529040">
+      <screen x="0" y="23" width="1280" height="709" />
+    </state>
+    <state width="1171" height="218" key="GridCell.Tab.1.left/0.23.1280.709@0.23.1280.709" timestamp="1585838529040" />
+    <state width="1171" height="218" key="GridCell.Tab.1.right" timestamp="1585838529041">
+      <screen x="0" y="23" width="1280" height="709" />
+    </state>
+    <state width="1171" height="218" key="GridCell.Tab.1.right/0.23.1280.709@0.23.1280.709" timestamp="1585838529041" />
+    <state x="182" y="23" width="982" height="709" key="SettingsEditor" timestamp="1585830472962">
+      <screen x="0" y="23" width="1280" height="709" />
+    </state>
+    <state x="182" y="23" width="982" height="709" key="SettingsEditor/0.23.1280.709@0.23.1280.709" timestamp="1585830472962" />
+    <state width="606" height="354" key="XDebugger.FullValuePopup" timestamp="1585820217504">
+      <screen x="0" y="23" width="1280" height="709" />
+    </state>
+    <state width="606" height="354" key="XDebugger.FullValuePopup/0.23.1280.709@0.23.1280.709" timestamp="1585820217504" />
+    <state x="319" y="210" key="com.intellij.ide.util.TipDialog" timestamp="1585811239645">
+      <screen x="0" y="23" width="1280" height="709" />
+    </state>
+    <state x="319" y="210" key="com.intellij.ide.util.TipDialog/0.23.1280.709@0.23.1280.709" timestamp="1585811239645" />
+    <state x="225" y="120" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1585813867368">
+      <screen x="0" y="23" width="1280" height="709" />
+    </state>
+    <state x="225" y="120" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/0.23.1280.709@0.23.1280.709" timestamp="1585813867368" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/bio$bdtongji.coverage" NAME="bdtongji Coverage Results" MODIFIED="1585830080866" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/bio$first.coverage" NAME="first Coverage Results" MODIFIED="1585649632667" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+  </component>
+</project>
