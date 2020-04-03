@@ -9,6 +9,7 @@ Desc:
 """
 
 
+import os
 import requests
 import json
 import datetime
@@ -27,6 +28,9 @@ class BaiduTongJi:
                 "token": token,
                 "account_type": account_type
             }
+        with open(os.path.join(os.path.expanduser("~"), "online_config/baidutuiguang_matrix.json"), 'r') as f:
+            m = json.load(f)
+        self.matrix = m
         return
 
     def send_request(self, body):
@@ -39,9 +43,7 @@ class BaiduTongJi:
         response = json.loads(request.text)
         return response
 
-
     def trend(self, **kwargs):
-
         """
         趋势分析
         :return:
@@ -52,7 +54,7 @@ class BaiduTongJi:
         ret_data = result[0]
         ret_pv = result[1]
 
-        return ret_data, ret_pv
+        return response
 
     def all_source(self, **kwargs):
         """
@@ -74,6 +76,15 @@ class BaiduTongJi:
         new_df = pd.DataFrame(response['body']['data'][0]['result']['items'][1], index=dates, columns=col)
         new_df['visitor'] = 'new'
         return pd.concat([new_df, old_df])
+
+    def district_visit(self, **kwargs):
+        """
+        结果简单没有细节，不进一步挖掘
+        :param kwargs:
+        :return:
+        """
+        response = self.send_request(kwargs)
+        return response
 
 
 class SurvivalAnalysis:
@@ -114,4 +125,22 @@ class SurvivalAnalysis:
 
 
 if __name__ == "__main__":
-    pass
+    account_file = os.path.join(os.path.expanduser("~"), "online_config/baidutongji.json")
+    with open(account_file, 'r') as f:
+        account = json.load(f)
+
+    bdtj = BaiduTongJi(
+        username=account['username'],
+        password=account['password'],
+        token=account['token'],
+    )
+    trend = bdtj.trend(
+        site_id=account['site_id'],
+        end_date=str(datetime.date.today()).replace("-", ""),
+        start_date='20190301',
+        method="trend/time/a",
+        metrics=bdtj.matrix['trend'],
+        gran='day',
+        visitor='new',
+    )
+    print(bdtj.matrix['trend'])
