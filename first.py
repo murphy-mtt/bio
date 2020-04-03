@@ -8,7 +8,7 @@ class DataProcessor:
         pass
 
     def get_data(self):
-        np.random.seed(19680801)
+        np.random.seed(196808)
 
         N = 100
         r0 = 0.6
