@@ -126,19 +126,4 @@ class SurvivalAnalysis:
 
 
 if __name__ == "__main__":
-    my_id = "12391745"
-    today = str(datetime.date.today()).replace("-", "")
-    bdtj = BaiduTongJi()
-    all_s = bdtj.all_source(
-        site_id=my_id,
-        start_date="20190101",
-        end_date="20190501",
-        metrics='pv_count, pv_ratio, visit_count, visitor_count, new_visitor_count, ip_count, bounce_ratio, avg_visit_time, avg_visit_pages',
-        method="source/all/a",
-        gran='day',
-    )
-    plot = SurvivalAnalysis(data_frame=all_s)
-    plot.coxph(
-        title="OncoView Cox proportional hazard",
-        path="/Users/wangfenglin/stat/plot.png"
-    )
+    pass
