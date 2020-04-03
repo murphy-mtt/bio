@@ -19,13 +19,13 @@ import lifelines
 
 
 class BaiduTongJi:
-    def __init__(self):
+    def __init__(self, username, password, token, account_type=1):
         self.api_url = 'https://api.baidu.com/json/tongji/v1/ReportService/getData'
         self.header = {
-                "username": "gggsmqss",
-                'password': 'Ubuntu10',
-                "token": '5773d14ebf74754aa0f3b9defaa61945',
-                "account_type": 1
+                "username": username,
+                'password': password,
+                "token": token,
+                "account_type": account_type
             }
         return
 
