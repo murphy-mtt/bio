@@ -105,9 +105,9 @@ class SurvivalAnalysis:
         T = all_source["avg_visit_time"]
         kmf = lifelines.KaplanMeierFitter()
         fig, ax = plt.subplots()
-        kmf.fit(T[visitor], label="New Visitor")
+        kmf.fit(T[visitor], label="New Visitors")
         kmf.plot(ax=ax)
-        kmf.fit(T[~visitor], label="Old Visitor")
+        kmf.fit(T[~visitor], label="Old Visitors")
         kmf.plot(ax=ax)
         plt.ylim(0, 1)
         plt.title(title)
