@@ -39,21 +39,9 @@ class BaiduTongJi:
         response = json.loads(request.text)
         return response
 
-    def source_all(self):
-        """
-        全部来源
-        :return:
-        """
-        response = self.send_request()
-        result = response['body']['data'][0]['result']['pageSum'][0]
-        ret_pv = result[0]
-        ret_uv = result[1]
-
-        print(f"网站的PV是：{ret_pv}\n网站的UV是：{ret_uv}")
-
-        return
 
     def trend(self, **kwargs):
+
         """
         趋势分析
         :return:
