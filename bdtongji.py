@@ -156,4 +156,4 @@ if __name__ == "__main__":
         gran='day',
         visitor='new',
     )
-    print(trend.head())
+    trend.to_csv('../bdtj_trend.csv')
