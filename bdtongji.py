@@ -143,4 +143,3 @@ if __name__ == "__main__":
         gran='day',
         visitor='new',
     )
-    print(bdtj.matrix['trend'])
