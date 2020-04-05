@@ -12,11 +12,12 @@ Desc: Download baidutongji record and make statistics
 import os
 import requests
 import json
-import datetime
+import re
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 import lifelines
+import seaborn as sns
 
 
 class BaiduTongJi:
@@ -67,17 +68,21 @@ class BaiduTongJi:
         """
         kwargs['visitor'] = 'old'
         response = self.send_request(kwargs)
-        col = kwargs['metrics'].split(', ')
+        col = response['body']['data'][0]['result']['fields']
+        col.remove('source_type_title')
         dates = np.array([i[0] for i in response['body']['data'][0]['result']['items'][0]])
-        old_df = pd.DataFrame(response['body']['data'][0]['result']['items'][1], index=dates, columns=col)
+        old_df = pd.DataFrame(response['body']['data'][0]['result']['items'][1], columns=col)
         old_df['visitor'] = 'old'
+        old_df['date'] = dates
 
         kwargs['visitor'] = 'new'
         response = self.send_request(kwargs)
-        col = kwargs['metrics'].split(', ')
+        col = response['body']['data'][0]['result']['fields']
+        col.remove('source_type_title')
         dates = np.array([i[0] for i in response['body']['data'][0]['result']['items'][0]])
-        new_df = pd.DataFrame(response['body']['data'][0]['result']['items'][1], index=dates, columns=col)
+        new_df = pd.DataFrame(response['body']['data'][0]['result']['items'][1], columns=col)
         new_df['visitor'] = 'new'
+        new_df['date'] = dates
         return pd.concat([new_df, old_df])
 
     def district_visit(self, **kwargs):
@@ -87,6 +92,16 @@ class BaiduTongJi:
         :return:
         """
         response = self.send_request(kwargs)
+        return response
+
+    def realtime_visitor(self, **kwargs):
+        """
+        没啥用，没写完
+        :param kwargs:
+        :return:
+        """
+        response = self.send_request(kwargs)
+        col = response['body']['data'][0]['result']['fields']
         return response
 
 
@@ -108,17 +123,23 @@ class SurvivalAnalysis:
         all_source = self.data_frame
         title = kwargs['title']
         path = kwargs['path']
-        visitor = (all_source['visitor'] == "new")
-        T = all_source["avg_visit_time"]
+        old = all_source[all_source['visitor'] == 'old']
+        old_c = old.loc[:, 'avg_visit_time'].str.isdigit()
+        old_cleaned = old[old_c].copy()
+        new = all_source[all_source['visitor'] == 'new']
+        new_c = new.loc[:, 'avg_visit_time'].str.isdigit()
+        new_cleaned = new[new_c].copy()
         kmf = lifelines.KaplanMeierFitter()
         fig, ax = plt.subplots()
-        kmf.fit(T[visitor], label="New Visitors")
-        kmf.plot(ax=ax)
-        kmf.fit(T[~visitor], label="Old Visitors")
-        kmf.plot(ax=ax)
+        kmf.fit(new_cleaned['avg_visit_time'], label="New Visitors")
+        kmf.plot(ax=ax, show_censors=True)
+        kmf.fit(old_cleaned['avg_visit_time'], label="Old Visitors")
+        kmf.plot(ax=ax, show_censors=True)
         plt.ylim(0, 1)
         plt.title(title)
+        plt.tight_layout()
         plt.savefig(path)
+        plt.close('all')
 
     def coxph(self, **kwargs):
         """
@@ -128,35 +149,72 @@ class SurvivalAnalysis:
         """
         title = kwargs['title']
         path = kwargs['path']
+        df_raw = self.data_frame
+        df_raw = df_raw.applymap(lambda x: x if re.search("[-+]?[0-9]*\.?[0-9]+", str(x)) else np.nan)
+        if kwargs['exclude']:
+            df = df_raw.drop(kwargs['exclude'], axis=1)
+        df = df.dropna(how='any')
         fit, ax = plt.subplots()
         cph = lifelines.CoxPHFitter()
-        cph.fit(self.data_frame.drop(['visitor'], axis=1), 'avg_visit_time')
+        cph.fit(df, 'avg_visit_time')
         cph.plot(hazard_ratios=True, ax=ax)
         plt.title(title)
         plt.tight_layout()
         plt.savefig(path)
+        plt.close('all')
+
+    def cluster_map(self, **kwargs):
+        row_df = self.data_frame
+        row_df['avg_visit_time'] = row_df['avg_visit_time'].apply(
+            lambda x: x if re.search("[-+]?[0-9]*\.?[0-9]+", str(x)) else np.nan)
+        row_df = row_df.dropna(how='any')
+        row_df = row_df.drop(kwargs['exclude'], axis=1)
+        df = row_df.applymap(float)
+        sns.clustermap(df.corr())
+        plt.savefig(kwargs['path'])
+        plt.tight_layout()
+        plt.close('all')
+
+    def heat_map(self, **kwargs):
+        sns.set(style="white")
+        row_df = self.data_frame
+        row_df['avg_visit_time'] = row_df['avg_visit_time'].apply(
+            lambda x: x if re.search("[-+]?[0-9]*\.?[0-9]+", str(x)) else np.nan)
+        row_df = row_df.dropna(how='any')
+        row_df = row_df.drop(kwargs['exclude'], axis=1)
+        df = row_df.applymap(float)
+        corr = df.corr()
+        mask = np.triu(np.ones_like(corr, dtype=np.bool))
+        cmap = sns.diverging_palette(220, 10, as_cmap=True)
+        # Draw the heatmap with the mask and correct aspect ratio
+        sns.heatmap(corr, mask=mask, cmap=cmap, vmax=.3, center=0,
+                    square=True, linewidths=.5, cbar_kws={"shrink": .5})
+        plt.savefig(kwargs['path'])
+        plt.tight_layout()
+        plt.close('all')
 
 
 if __name__ == "__main__":
-    account_file = os.path.join(os.path.expanduser("~"), "online_config/baidutongji.json")
-    with open(account_file, 'r') as f:
-        account = json.load(f)
+    current_dir = os.path.dirname(os.path.abspath(__file__))
+    all_source_df = pd.read_csv(os.path.join(current_dir, 'bdtj/all_source.csv'))
+    sa = SurvivalAnalysis(data_frame=all_source_df)
+    sa.all_source_plot(
+        title="Analy",
+        path="/Users/wangfenglin/stat/kmp.png",
+    )
+    sa.coxph(
+        title="cox",
+        path="/Users/wangfenglin/stat/coxph.png",
+        exclude=['visitor', 'date', 'trans_ratio', 'trans_ratio', 'bounce_ratio', 'date', 'trans_count', 'Unnamed: 0']
+    )
+    sa.cluster_map(
+        title='Correlation of Oncoview factors',
+        path="/Users/wangfenglin/stat/cluster.png",
+        exclude=['date', 'trans_count', 'trans_ratio', 'visitor', 'Unnamed: 0'],
+    )
 
-    bdtj = BaiduTongJi(
-        username=account['username'],
-        password=account['password'],
-        token=account['token'],
+    sa.heat_map(
+        title='Correlation of Oncoview factors',
+        path="/Users/wangfenglin/stat/corr.png",
+        exclude=['date', 'trans_count', 'trans_ratio', 'visitor', 'Unnamed: 0'],
     )
-    trend = bdtj.trend(
-        site_id=account['site_id'],
-        end_date=str(datetime.date.today()).replace("-", ""),
-        start_date='20190301',
-        method="trend/time/a",
-        metrics=bdtj.matrix['trend'],
-        gran='day',
-        visitor='new',
-    )
-<<<<<<< HEAD
-=======
-    trend.to_csv('../bdtj_trend.csv')
->>>>>>> 49e3303f644deef65da71a7291874b53d8a91c36
