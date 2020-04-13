@@ -199,7 +199,7 @@ if __name__ == "__main__":
     all_source_df = pd.read_csv(os.path.join(current_dir, 'bdtj/all_source.csv'))
     sa = SurvivalAnalysis(data_frame=all_source_df)
     sa.all_source_plot(
-        title="Analy",
+        title="The difference of visiting time between New & Old visitors",
         path="/Users/wangfenglin/stat/kmp.png",
     )
     sa.coxph(
