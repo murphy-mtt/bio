@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="8c99ba6a-f384-4a1c-8361-d87828187c5c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bdtj/all_source.csv" beforeDir="false" afterPath="$PROJECT_DIR$/bdtj/all_source.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bdtongji.py" beforeDir="false" afterPath="$PROJECT_DIR$/bdtongji.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/first.py" beforeDir="false" afterPath="$PROJECT_DIR$/first.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -134,7 +132,11 @@
       <workItem from="1586316984962" duration="295000" />
       <workItem from="1586421050113" duration="93000" />
       <workItem from="1586438617623" duration="669000" />
-      <workItem from="1586744504479" duration="1523000" />
+      <workItem from="1586744504479" duration="1633000" />
+      <workItem from="1586770385692" duration="531000" />
+      <workItem from="1586771605939" duration="2443000" />
+      <workItem from="1586824688646" duration="1065000" />
+      <workItem from="1586956276078" duration="1057000" />
     </task>
     <servers />
   </component>
@@ -146,30 +148,34 @@
       <screen x="0" y="23" width="1280" height="709" />
     </state>
     <state x="349" y="23" key="#bdtongji/0.23.1280.709@0.23.1280.709" timestamp="1586069194738" />
+    <state x="104" y="39" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1586956300139">
+      <screen x="0" y="23" width="1280" height="709" />
+    </state>
+    <state x="104" y="39" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.1280.709@0.23.1280.709" timestamp="1586956300138" />
     <state width="934" height="438" key="DebuggerActiveHint" timestamp="1586085964732">
       <screen x="0" y="23" width="1280" height="709" />
     </state>
     <state width="934" height="438" key="DebuggerActiveHint/0.23.1280.709@0.23.1280.709" timestamp="1586085964732" />
     <state width="951" height="458" key="DebuggerActiveHint/67.27.1299.741@67.27.1299.741" timestamp="1585930035862" />
-    <state width="1238" height="174" key="GridCell.Tab.0.bottom" timestamp="1586746043390">
+    <state width="1238" height="174" key="GridCell.Tab.0.bottom" timestamp="1586825825602">
       <screen x="0" y="23" width="1280" height="709" />
     </state>
-    <state width="1238" height="174" key="GridCell.Tab.0.bottom/0.23.1280.709@0.23.1280.709" timestamp="1586746043390" />
+    <state width="1238" height="174" key="GridCell.Tab.0.bottom/0.23.1280.709@0.23.1280.709" timestamp="1586825825602" />
     <state width="1233" height="202" key="GridCell.Tab.0.bottom/67.27.1299.741@67.27.1299.741" timestamp="1585930615203" />
-    <state width="1238" height="174" key="GridCell.Tab.0.center" timestamp="1586746043389">
+    <state width="1238" height="174" key="GridCell.Tab.0.center" timestamp="1586825825602">
       <screen x="0" y="23" width="1280" height="709" />
     </state>
-    <state width="1238" height="174" key="GridCell.Tab.0.center/0.23.1280.709@0.23.1280.709" timestamp="1586746043389" />
+    <state width="1238" height="174" key="GridCell.Tab.0.center/0.23.1280.709@0.23.1280.709" timestamp="1586825825602" />
     <state width="1233" height="202" key="GridCell.Tab.0.center/67.27.1299.741@67.27.1299.741" timestamp="1585930615203" />
-    <state width="1238" height="174" key="GridCell.Tab.0.left" timestamp="1586746043389">
+    <state width="1238" height="174" key="GridCell.Tab.0.left" timestamp="1586825825601">
       <screen x="0" y="23" width="1280" height="709" />
     </state>
-    <state width="1238" height="174" key="GridCell.Tab.0.left/0.23.1280.709@0.23.1280.709" timestamp="1586746043389" />
+    <state width="1238" height="174" key="GridCell.Tab.0.left/0.23.1280.709@0.23.1280.709" timestamp="1586825825601" />
     <state width="1233" height="202" key="GridCell.Tab.0.left/67.27.1299.741@67.27.1299.741" timestamp="1585930615202" />
-    <state width="1238" height="174" key="GridCell.Tab.0.right" timestamp="1586746043390">
+    <state width="1238" height="174" key="GridCell.Tab.0.right" timestamp="1586825825602">
       <screen x="0" y="23" width="1280" height="709" />
     </state>
-    <state width="1238" height="174" key="GridCell.Tab.0.right/0.23.1280.709@0.23.1280.709" timestamp="1586746043390" />
+    <state width="1238" height="174" key="GridCell.Tab.0.right/0.23.1280.709@0.23.1280.709" timestamp="1586825825602" />
     <state width="1233" height="202" key="GridCell.Tab.0.right/67.27.1299.741@67.27.1299.741" timestamp="1585930615203" />
     <state width="1238" height="218" key="GridCell.Tab.1.bottom" timestamp="1586097192655">
       <screen x="0" y="23" width="1280" height="709" />
@@ -217,6 +223,6 @@
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/bio$bdtongji.coverage" NAME="bdtongji Coverage Results" MODIFIED="1586088525811" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/bio$first.coverage" NAME="first Coverage Results" MODIFIED="1586746043378" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/bio$first.coverage" NAME="first Coverage Results" MODIFIED="1586825086281" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
